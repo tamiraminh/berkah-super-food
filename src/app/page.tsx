@@ -27,24 +27,26 @@ export default function HomePage() {
 
 function HeroSection() {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-brand-50 via-white to-earth-50">
-      <div className="absolute inset-0 opacity-5 pointer-events-none select-none text-[180px] leading-none overflow-hidden flex flex-wrap gap-4 p-4">
+    <section className="relative overflow-hidden bg-brand-900">
+      <div className="absolute inset-0 opacity-[0.04] pointer-events-none select-none text-earth-400 text-[200px] leading-none overflow-hidden flex flex-wrap gap-4 p-4">
         {["🌿", "🫚", "🧄", "🫛", "🌾", "🍯"].map((emoji, i) => (
           <span key={i}>{emoji}</span>
         ))}
       </div>
+      <div className="absolute -right-40 -top-40 w-[500px] h-[500px] rounded-full border-2 border-earth-500/20 pointer-events-none" />
+      <div className="absolute -right-28 -top-28 w-[400px] h-[400px] rounded-full border border-earth-500/10 pointer-events-none" />
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28">
         <div className="max-w-2xl space-y-6">
-          <span className="inline-flex items-center gap-2 bg-brand-100 text-brand-800 text-sm font-semibold px-4 py-1.5 rounded-full">
+          <span className="inline-flex items-center gap-2 bg-earth-500/20 text-earth-300 border border-earth-500/30 text-sm font-semibold px-4 py-1.5 rounded-full">
             🌿 100% Herbal Alami
           </span>
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-gray-900 leading-tight">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-tight">
             Khasiat Rempah{" "}
-            <span className="text-brand-700">Nusantara</span>{" "}
+            <span className="text-earth-400">Nusantara</span>{" "}
             untuk Hidup Sehat
           </h1>
-          <p className="text-lg text-gray-600 leading-relaxed">
+          <p className="text-lg text-brand-200 leading-relaxed">
             Berkah Super Food menghadirkan produk herbal alami pilihan –
             diproduksi dari bahan rempah segar berkualitas tinggi, tanpa
             pengawet buatan, untuk mendukung kesehatan keluarga Anda.
@@ -52,7 +54,7 @@ function HeroSection() {
           <div className="flex flex-wrap gap-3 pt-2">
             <Link
               href="/#products"
-              className="inline-flex items-center gap-2 bg-brand-600 hover:bg-brand-700 text-white font-semibold px-6 py-3 rounded-full transition-colors shadow-md"
+              className="inline-flex items-center gap-2 bg-earth-500 hover:bg-earth-400 text-brand-900 font-bold px-6 py-3 rounded-full transition-colors shadow-lg"
             >
               Lihat Semua Produk
             </Link>
@@ -60,23 +62,23 @@ function HeroSection() {
               href="https://wa.me/6281234567890"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-white hover:bg-gray-50 text-gray-800 font-semibold px-6 py-3 rounded-full border border-gray-200 transition-colors shadow-sm"
+              className="inline-flex items-center gap-2 bg-transparent hover:bg-white/10 text-white font-semibold px-6 py-3 rounded-full border border-white/30 transition-colors"
             >
               Pesan via WhatsApp
             </a>
           </div>
 
-          <div className="flex flex-wrap gap-6 pt-4">
+          <div className="flex flex-wrap gap-8 pt-4 border-t border-white/10">
             {[
               { value: "6+", label: "Produk Herbal" },
               { value: "100%", label: "Bahan Alami" },
               { value: "0", label: "Pengawet Buatan" },
             ].map(({ value, label }) => (
               <div key={label} className="text-center">
-                <div className="text-2xl font-extrabold text-brand-700">
+                <div className="text-2xl font-extrabold text-earth-400">
                   {value}
                 </div>
-                <div className="text-sm text-gray-500">{label}</div>
+                <div className="text-sm text-brand-300">{label}</div>
               </div>
             ))}
           </div>

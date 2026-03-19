@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
 
 export default function Header() {
@@ -11,10 +12,18 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <Link href="/" className="flex items-center gap-2 group">
-            <span className="text-2xl">🌿</span>
+            <div className="relative w-10 h-10 shrink-0 rounded-full overflow-hidden ring-2 ring-brand-200 group-hover:ring-earth-400 transition-all">
+              <Image
+                src="/logo.svg"
+                alt="Berkah Super Food"
+                fill
+                className="object-cover"
+                priority
+              />
+            </div>
             <div className="flex flex-col leading-none">
-              <span className="font-bold text-brand-800 text-lg tracking-tight group-hover:text-brand-600 transition-colors">
-                Berkah
+              <span className="font-bold text-brand-900 text-lg tracking-tight group-hover:text-brand-700 transition-colors">
+                BERKAH
               </span>
               <span className="font-semibold text-earth-600 text-xs tracking-widest uppercase">
                 Super Food
@@ -54,7 +63,7 @@ export default function Header() {
               href="https://wa.me/6281234567890"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-brand-600 hover:bg-brand-700 text-white text-sm font-medium px-4 py-2 rounded-full transition-colors"
+              className="inline-flex items-center gap-2 bg-earth-500 hover:bg-earth-400 text-brand-900 text-sm font-semibold px-4 py-2 rounded-full transition-colors shadow-sm"
             >
               <span>Pesan Sekarang</span>
             </a>
@@ -114,7 +123,7 @@ export default function Header() {
               href="https://wa.me/6281234567890"
               target="_blank"
               rel="noopener noreferrer"
-              className="block w-full text-center bg-brand-600 hover:bg-brand-700 text-white text-sm font-medium px-4 py-2 rounded-full transition-colors"
+              className="block w-full text-center bg-earth-500 hover:bg-earth-400 text-brand-900 text-sm font-semibold px-4 py-2 rounded-full transition-colors"
             >
               Pesan Sekarang
             </a>

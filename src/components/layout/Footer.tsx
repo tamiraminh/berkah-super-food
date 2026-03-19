@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -9,10 +10,17 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="space-y-3">
             <div className="flex items-center gap-2">
-              <span className="text-2xl">🌿</span>
+              <div className="relative w-10 h-10 shrink-0 rounded-full overflow-hidden ring-1 ring-earth-500/40">
+                <Image
+                  src="/logo.svg"
+                  alt="Berkah Super Food"
+                  fill
+                  className="object-cover"
+                />
+              </div>
               <div className="flex flex-col leading-none">
-                <span className="font-bold text-white text-lg">Berkah</span>
-                <span className="font-semibold text-brand-300 text-xs tracking-widest uppercase">
+                <span className="font-bold text-white text-lg tracking-tight">BERKAH</span>
+                <span className="font-semibold text-earth-400 text-xs tracking-widest uppercase">
                   Super Food
                 </span>
               </div>
