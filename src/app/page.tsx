@@ -382,8 +382,8 @@ function AboutSection() {
               <em>&ldquo;The Miracle Tree&rdquo;</em>.
             </p>
             <p className="text-gray-600 leading-relaxed">
-              Setiap jar Moringa Honey diproduksi dengan penuh kehati-hatian —
-              tanpa pengawet buatan, tanpa pewarna sintetis — untuk memastikan
+              Setiap jar Moringa Honey diproduksi dengan penuh kehati-hatian.
+              Tanpa pengawet buatan, tanpa pewarna sintetis, untuk memastikan
               Anda mendapatkan kebaikan alam yang sesungguhnya.
             </p>
             <div className="flex gap-4 pt-2">
