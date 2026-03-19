@@ -38,4 +38,5 @@ export const categoryLabels: Record<ProductCategory, string> = {
   suplemen: "Suplemen",
   "rempah-segar": "Rempah Segar",
   jamu: "Jamu",
+  superfood: "Superfood Herbal",
 };

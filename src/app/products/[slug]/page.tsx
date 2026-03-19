@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import ProductImageGallery from "@/components/product/ProductImageGallery";
 import {
   getAllSlugs,
   getProductBySlug,
@@ -57,28 +58,12 @@ export default async function ProductDetailPage({ params }: Props) {
       </nav>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 mb-12">
-        <div className="space-y-4">
-          <div
-            className="relative w-full aspect-square rounded-3xl flex items-center justify-center"
-            style={{ backgroundColor: product.imagePlaceholder + "20" }}
-          >
-            <div
-              className="w-40 h-40 rounded-full flex items-center justify-center text-7xl shadow-inner"
-              style={{ backgroundColor: product.imagePlaceholder + "40" }}
-            >
-              🌿
-            </div>
-            {product.isFeatured && (
-              <span className="absolute top-4 left-4 bg-earth-500 text-white text-sm font-semibold px-3 py-1 rounded-full">
-                Produk Andalan
-              </span>
-            )}
-          </div>
-
-          <p className="text-xs text-center text-gray-400 italic">
-            Gambar produk akan segera hadir
-          </p>
-        </div>
+        <ProductImageGallery
+          images={product.images ?? []}
+          name={product.name}
+          imagePlaceholder={product.imagePlaceholder}
+          isFeatured={product.isFeatured}
+        />
 
         <div className="space-y-5">
           <div>
@@ -92,7 +77,7 @@ export default async function ProductDetailPage({ params }: Props) {
           </div>
 
           <div className="flex items-baseline gap-2">
-            <span className="text-3xl font-bold text-earth-700">
+            <span className="text-3xl font-bold text-brand-800">
               {formatPrice(product.price)}
             </span>
             <span className="text-gray-400 text-sm">
@@ -131,9 +116,9 @@ export default async function ProductDetailPage({ params }: Props) {
                 href={`https://wa.me/6281234567890?text=Halo, saya ingin memesan ${encodeURIComponent(product.name)} (${product.weight})`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex-1 text-center bg-brand-600 hover:bg-brand-700 text-white font-semibold px-6 py-3 rounded-full transition-colors"
+                className="flex-1 text-center bg-earth-500 hover:bg-earth-400 text-brand-900 font-bold px-6 py-3 rounded-full transition-colors shadow-md"
               >
-                Pesan via WhatsApp
+                🛒 Pesan via WhatsApp
               </a>
             ) : (
               <button
@@ -153,7 +138,35 @@ export default async function ProductDetailPage({ params }: Props) {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+      {product.vitamins && product.vitamins.length > 0 && (
+        <DetailCard title="💊 Kandungan Vitamin & Nutrisi">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+            {product.vitamins.map((vitamin) => (
+              <div
+                key={vitamin.name}
+                className="flex items-start gap-3 bg-brand-50 rounded-xl p-3"
+              >
+                <div className="flex-shrink-0 w-8 h-8 rounded-full bg-brand-100 flex items-center justify-center text-brand-700 font-bold text-xs">
+                  {vitamin.name.split(" ")[1] ?? "✓"}
+                </div>
+                <div>
+                  <p className="text-sm font-semibold text-brand-800">
+                    {vitamin.name}
+                  </p>
+                  <p className="text-xs text-gray-600 mt-0.5">
+                    {vitamin.benefit}
+                  </p>
+                  <p className="text-xs text-brand-500 mt-1 font-medium">
+                    Sumber: {vitamin.source}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </DetailCard>
+      )}
+
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
         <DetailCard title="📖 Deskripsi Lengkap">
           <p className="text-gray-600 text-sm leading-relaxed">
             {product.longDescription}

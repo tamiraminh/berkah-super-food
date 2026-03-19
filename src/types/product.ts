@@ -2,11 +2,18 @@ export type ProductCategory =
   | "minuman-herbal"
   | "suplemen"
   | "rempah-segar"
-  | "jamu";
+  | "jamu"
+  | "superfood";
 
 export type ProductBenefit = {
   icon: string;
   label: string;
+};
+
+export type VitaminInfo = {
+  name: string;
+  benefit: string;
+  source: string;
 };
 
 export type Product = {
@@ -20,8 +27,10 @@ export type Product = {
   price: number;
   unit: string;
   weight: string;
+  images: string[];
   imagePlaceholder: string;
   benefits: ProductBenefit[];
+  vitamins?: VitaminInfo[];
   ingredients: string[];
   howToUse: string[];
   isAvailable: boolean;

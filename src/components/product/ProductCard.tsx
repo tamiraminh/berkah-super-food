@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import type { Product } from "@/types/product";
 import { formatPrice, categoryLabels } from "@/lib/products";
 
@@ -13,16 +14,28 @@ export default function ProductCard({ product }: ProductCardProps) {
       className="group flex flex-col bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-all duration-200 overflow-hidden"
     >
       <div
-        className="relative h-48 w-full flex items-center justify-center"
+        className="relative h-48 w-full overflow-hidden"
         style={{ backgroundColor: product.imagePlaceholder + "20" }}
         aria-label={`Foto produk ${product.name}`}
       >
-        <div
-          className="w-24 h-24 rounded-full flex items-center justify-center text-4xl shadow-inner"
-          style={{ backgroundColor: product.imagePlaceholder + "40" }}
-        >
-          🌿
-        </div>
+        {product.images?.[0] ? (
+          <Image
+            src={product.images[0]}
+            alt={product.name}
+            fill
+            className="object-cover group-hover:scale-105 transition-transform duration-300"
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+          />
+        ) : (
+          <div className="w-full h-full flex items-center justify-center">
+            <div
+              className="w-24 h-24 rounded-full flex items-center justify-center text-4xl shadow-inner"
+              style={{ backgroundColor: product.imagePlaceholder + "40" }}
+            >
+              🌿
+            </div>
+          </div>
+        )}
         {product.isFeatured && (
           <span className="absolute top-3 left-3 bg-earth-500 text-white text-xs font-semibold px-2 py-0.5 rounded-full">
             Andalan
