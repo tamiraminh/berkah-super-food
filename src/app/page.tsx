@@ -57,12 +57,12 @@ function HeroSection() {
             untuk mendukung kesehatan dan vitalitas Anda setiap hari.
           </p>
           <div className="flex flex-wrap gap-3 pt-2">
-            <Link
-              href="/#products"
+            <a
+              href="#products"
               className="inline-flex items-center gap-2 bg-earth-500 hover:bg-earth-400 text-brand-900 font-bold px-6 py-3 rounded-full transition-colors shadow-lg"
             >
               Lihat Produk
-            </Link>
+            </a>
             <a
               href={`https://wa.me/6281122848999?text=${encodeURIComponent("Halo kak! Saya mau pesan Moringa Honey. Boleh dibantu? ^ ^")}`}
               target="_blank"
@@ -342,11 +342,11 @@ function WhyUsSection() {
             Mengapa Berkah Super Food?
           </h2>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="flex flex-wrap justify-center gap-6">
           {features.map(({ icon, title, description }) => (
             <div
               key={title}
-              className="flex flex-col items-center text-center p-6 rounded-2xl bg-white border border-brand-100 shadow-sm"
+              className="flex flex-col items-center text-center p-6 rounded-2xl bg-white border border-brand-100 shadow-sm w-full sm:w-64 lg:w-72 flex-shrink-0"
             >
               <div className="text-4xl mb-3">{icon}</div>
               <h3 className="font-bold text-gray-900 mb-2">{title}</h3>
@@ -375,7 +375,7 @@ function AboutSection() {
             </h2>
             <p className="text-gray-600 leading-relaxed">
               Berkah Super Food lahir dari keyakinan bahwa alam menyediakan
-              segalanya — kita hanya perlu menggabungkannya dengan bijak.
+              segalanya, kita hanya perlu menggabungkannya dengan bijak.
               Moringa Honey adalah wujud nyata dari keyakinan itu: madu murni
               yang telah dikenal ribuan tahun manfaatnya, dipadukan dengan daun
               kelor (Moringa oleifera) yang dijuluki{" "}
