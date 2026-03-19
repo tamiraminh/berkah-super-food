@@ -27,6 +27,10 @@ export const metadata: Metadata = {
     "suplemen alami",
     "Berkah Super Food",
   ],
+  icons: {
+    icon: "/logo.svg",
+    apple: "/logo.svg",
+  },
   openGraph: {
     type: "website",
     locale: "id_ID",
