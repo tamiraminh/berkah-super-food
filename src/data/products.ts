@@ -13,7 +13,7 @@ export const products: Product[] = [
     category: "superfood",
     price: 95000,
     unit: "jar",
-    weight: "250g",
+    weight: "125g",
     images: [
       "/products/moringa-honey-1.jpg",
       "/products/moringa-honey-2.jpg",

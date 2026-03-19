@@ -60,7 +60,7 @@ export default function Header() {
 
           <div className="hidden md:flex items-center gap-3">
             <a
-              href="https://wa.me/6281234567890"
+              href={`https://wa.me/6281122848999?text=${encodeURIComponent("Halo kak! Saya mau pesan Moringa Honey. Boleh dibantu? ^ ^")}`}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 bg-earth-500 hover:bg-earth-400 text-brand-900 text-sm font-semibold px-4 py-2 rounded-full transition-colors shadow-sm"
@@ -120,7 +120,7 @@ export default function Header() {
           ))}
           <div className="pt-2">
             <a
-              href="https://wa.me/6281234567890"
+              href={`https://wa.me/6281122848999?text=${encodeURIComponent("Halo kak! Saya mau pesan Moringa Honey. Boleh dibantu? ^ ^")}`}
               target="_blank"
               rel="noopener noreferrer"
               className="block w-full text-center bg-earth-500 hover:bg-earth-400 text-brand-900 text-sm font-semibold px-4 py-2 rounded-full transition-colors"

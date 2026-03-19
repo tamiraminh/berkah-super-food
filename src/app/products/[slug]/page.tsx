@@ -113,7 +113,7 @@ export default async function ProductDetailPage({ params }: Props) {
           <div className="flex gap-3 pt-2">
             {product.isAvailable ? (
               <a
-                href={`https://wa.me/6281234567890?text=Halo, saya ingin memesan ${encodeURIComponent(product.name)} (${product.weight})`}
+                href={`https://wa.me/6281122848999?text=${encodeURIComponent("Halo kak! Saya mau pesan Moringa Honey. Boleh dibantu? ^ ^")}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex-1 text-center bg-earth-500 hover:bg-earth-400 text-brand-900 font-bold px-6 py-3 rounded-full transition-colors shadow-md"

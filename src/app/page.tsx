@@ -52,7 +52,7 @@ function HeroSection() {
             <span className="text-earth-400">Satu Jar</span>
           </h1>
           <p className="text-lg text-brand-200 leading-relaxed">
-            Berkah Super Food menghadirkan Moringa Honey — perpaduan madu murni
+            Berkah Super Food menghadirkan Moringa Honey. Perpaduan madu murni
             pilihan dengan tepung daun kelor premium. Superfood herbal alami
             untuk mendukung kesehatan dan vitalitas Anda setiap hari.
           </p>
@@ -64,7 +64,7 @@ function HeroSection() {
               Lihat Produk
             </Link>
             <a
-              href="https://wa.me/6281234567890"
+              href={`https://wa.me/6281122848999?text=${encodeURIComponent("Halo kak! Saya mau pesan Moringa Honey. Boleh dibantu? ^ ^")}`}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 bg-transparent hover:bg-white/10 text-white font-semibold px-6 py-3 rounded-full border border-white/30 transition-colors"
@@ -195,7 +195,7 @@ function ProductSpotlightSection({ product }: { product: Product }) {
             <div className="flex flex-col sm:flex-row gap-3 pt-2">
               {product.isAvailable ? (
                 <a
-                  href={`https://wa.me/6281234567890?text=Halo, saya ingin memesan ${encodeURIComponent(product.name)} (${product.weight})`}
+                  href={`https://wa.me/6281122848999?text=${encodeURIComponent("Halo kak! Saya mau pesan Moringa Honey. Boleh dibantu? ^ ^")}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex-1 text-center bg-earth-500 hover:bg-earth-400 text-brand-900 font-bold px-6 py-3.5 rounded-full transition-colors shadow-md"
@@ -332,12 +332,6 @@ function WhyUsSection() {
       description:
         "Produk kami dikirim langsung ke rumah Anda dengan pengemasan yang aman dan terpercaya.",
     },
-    {
-      icon: "💬",
-      title: "Konsultasi Gratis",
-      description:
-        "Tim kami siap membantu Anda mendapatkan informasi produk secara cepat dan tepat via WhatsApp.",
-    },
   ];
 
   return (
@@ -394,7 +388,7 @@ function AboutSection() {
             </p>
             <div className="flex gap-4 pt-2">
               <a
-                href="https://wa.me/6281234567890"
+                href={`https://wa.me/6281122848999?text=${encodeURIComponent("Halo kak! Saya mau pesan Moringa Honey. Boleh dibantu? ^ ^")}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 bg-brand-700 hover:bg-brand-800 text-white font-semibold px-5 py-2.5 rounded-full transition-colors text-sm"
@@ -430,8 +424,8 @@ function AboutSection() {
 
 function CtaSection({ product }: { product: Product | undefined }) {
   const waMessage = product
-    ? `Halo, saya ingin memesan ${encodeURIComponent(product.name)}`
-    : "Halo, saya ingin memesan produk Berkah Super Food";
+    ? encodeURIComponent(`Halo kak! Saya mau pesan ${product.name}. Boleh dibantu proses pemesanannya? 😊`)
+    : encodeURIComponent("Halo kak! Saya mau pesan Moringa Honey Berkah Super Food. Boleh dibantu? 😊");
 
   return (
     <section className="py-16 bg-brand-900">
@@ -445,7 +439,7 @@ function CtaSection({ product }: { product: Product | undefined }) {
         </p>
         <div className="flex flex-wrap justify-center gap-3">
           <a
-            href={`https://wa.me/6281234567890?text=${waMessage}`}
+            href={`https://wa.me/6281122848999?text=${encodeURIComponent("Halo kak! Saya mau pesan Moringa Honey. Boleh dibantu? ^ ^")}`}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 bg-earth-500 hover:bg-earth-400 text-brand-900 font-bold px-8 py-3.5 rounded-full transition-colors shadow-lg"

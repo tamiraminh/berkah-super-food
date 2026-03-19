@@ -58,26 +58,26 @@ export default function Footer() {
             <ul className="space-y-2 text-sm text-brand-300">
               <li className="flex items-start gap-2">
                 <span>📍</span>
-                <span>Jl. Raya Herbal No. 1, Jawa Tengah, Indonesia</span>
+                <span>Kab. Tangerang, Bantern, Indonesia</span>
               </li>
               <li className="flex items-center gap-2">
-                <span>📱</span>
+                <span>📞</span>
                 <a
-                  href="https://wa.me/6281234567890"
+                  href={`https://wa.me/6281122848999?text=${encodeURIComponent("Halo kak! Saya mau pesan Moringa Honey. Boleh dibantu? ^ ^")}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:text-white transition-colors"
                 >
-                  +62 812-3456-7890
+                  +62 811-2284-8999
                 </a>
               </li>
               <li className="flex items-center gap-2">
                 <span>📧</span>
                 <a
-                  href="mailto:info@berkahsuperfood.com"
+                  href="mailto:berkahsuperfood@gmail.com"
                   className="hover:text-white transition-colors"
                 >
-                  info@berkahsuperfood.com
+                  berkahsuperfood@gmail.com
                 </a>
               </li>
             </ul>
